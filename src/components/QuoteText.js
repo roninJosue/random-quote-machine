@@ -8,11 +8,19 @@ library.add(faQuoteLeft)
 const QuoteText = (
   {
     text = 'My quote ada ada da ada asda asd asdasd',
-    color
+    color,
+    opacity
   }) => {
-  return(
-    <div id='text' style={{color: color}}>
-      <FontAwesomeIcon icon={faQuoteLeft} />
+
+  return (
+    <div id='text' style={
+      {
+        color: color,
+        opacity: opacity ? 1 : 0,
+        transition: 'opacity 200ms ease-in'
+      }
+    }>
+      <FontAwesomeIcon size='lg' icon={faQuoteLeft}/>
       <p id='text-p'>
         {text}
       </p>

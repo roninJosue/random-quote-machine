@@ -1,6 +1,18 @@
 import React from "react"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTwitter, faTumblr} from "@fortawesome/free-brands-svg-icons";
+import {library} from "@fortawesome/fontawesome-svg-core";
 
-const QuoteButtons = ({setQuoteSelected, color}) => {
+library.add(faTwitter, faTumblr)
+
+const QuoteButtons = (
+  {
+    setQuoteSelected,
+    color,
+    text,
+    author
+  }
+) => {
 
   const back = {
     backgroundColor: color
@@ -8,8 +20,16 @@ const QuoteButtons = ({setQuoteSelected, color}) => {
   return(
     <div id='quote-buttons'>
       <div className='btn-social-media'>
-        <span style={back} className='btn-brand'>A</span>
-        <span style={back} className='btn-brand'>B</span>
+        <Link
+          back={back}
+          icon={faTwitter}
+          href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${text}"\n\r -${author}`}
+        />
+        <Link
+          back={back}
+          icon={faTumblr}
+          href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${author}&content=${text}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`}
+        />
       </div>
       <button
         onClick={setQuoteSelected}
@@ -19,6 +39,19 @@ const QuoteButtons = ({setQuoteSelected, color}) => {
         New Quote
       </button>
     </div>
+  )
+}
+
+const Link = ({back, icon, href}) => {
+  return (
+    <a
+      style={back}
+      className='btn-brand'
+      href={href}
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={icon} />
+    </a>
   )
 }
 
