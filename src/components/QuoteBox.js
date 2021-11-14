@@ -7,17 +7,21 @@ import QuoteButtons from "./QuoteButtons";
 const QuoteBox = ({quote, setQuoteSelected, color, opacity}) => {
   const {author, text} = quote
 
+  const style = {
+    color: color,
+    opacity: opacity ? 1 : 0,
+    transition: 'opacity 300ms cubic-bezier(.56,.08,.53,.73)'
+  }
+
   return(
     <div id='quote-box'>
       <QuoteText
-        color={color}
         text={text}
-        opacity={opacity}
+        style={style}
       />
       <QuoteAuthor
-        color={color}
         author={author}
-        opacity={opacity}
+        style={style}
       />
       <QuoteButtons
         setQuoteSelected={setQuoteSelected}

@@ -20,19 +20,16 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log(`opacity: ${opacity}`)
     const timer = setTimeout(() => {
       setOpacity(true)
-    }, 500)
+    }, 300)
 
     return () => clearTimeout(timer)
   }, [opacity])
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (quotes.length > 0) {
-        setQuoteSelected(indexElement(quotes))
-      }
+      getQuoteIndex()
     }, 200)
 
     return () => clearTimeout(timer)
@@ -42,17 +39,19 @@ function App() {
     setColor(indexElement(colors))
     setOpacity(false)
     setTimeout(() => {
-      if (quotes.length > 0) {
-        setQuoteSelected(indexElement(quotes))
-      }
-    }, 501)
+      getQuoteIndex()
+    }, 300)
+  }
 
-    //setColor(colors[random(0, colors.length - 1)])
+  const getQuoteIndex = () => {
+    if (quotes.length > 0) {
+      setQuoteSelected(indexElement(quotes))
+    }
   }
 
   return (
     <div className="App">
-      <header style={{
+      <main style={{
         backgroundColor: color
       }} className="App-header">
         <QuoteBox
@@ -61,7 +60,7 @@ function App() {
           color={color}
           opacity={opacity}
         />
-      </header>
+      </main>
     </div>
   );
 }

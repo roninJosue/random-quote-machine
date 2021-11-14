@@ -1,14 +1,12 @@
 import React from "react"
 
-const QuoteAuthor = ({author = 'Reynaldo Cano', color, opacity}) => {
+const QuoteAuthor = ({author = '', style}) => {
   return (
     <>
       {author && (
         <span
           id='author'
-          style={{color: color,opacity: opacity ? 1 : 0,
-            transition: 'opacity 200ms ease-in'}}
-
+          style={style}
         >
           -{author}
         </span>
