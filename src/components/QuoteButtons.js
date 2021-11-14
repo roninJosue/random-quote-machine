@@ -49,6 +49,7 @@ const Link = ({back, icon, href}) => {
       className='btn-brand'
       href={href}
       target='_blank'
+      rel="noreferrer"
     >
       <FontAwesomeIcon icon={icon} />
     </a>

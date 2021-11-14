@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './css/App.scss';
 import QuoteBox from "./components/QuoteBox";
 import {colors} from "./utils/colors";
@@ -10,6 +10,12 @@ function App() {
   const [quoteSelected, setQuoteSelected] = useState({author: '', text: ''})
   const [opacity, setOpacity] = useState(false)
   const [color, setColor] = useState(indexElement(colors))
+
+  const getQuoteIndex = useCallback(() => {
+    if (quotes.length > 0) {
+      setQuoteSelected(indexElement(quotes))
+    }
+  }, [quotes])
 
   useEffect(() => {
     getQuotes()
@@ -33,7 +39,7 @@ function App() {
     }, 200)
 
     return () => clearTimeout(timer)
-  }, [quotes])
+  }, [quotes, getQuoteIndex])
 
   const handleClick = () => {
     setColor(indexElement(colors))
@@ -43,11 +49,6 @@ function App() {
     }, 300)
   }
 
-  const getQuoteIndex = () => {
-    if (quotes.length > 0) {
-      setQuoteSelected(indexElement(quotes))
-    }
-  }
 
   return (
     <div className="App">
