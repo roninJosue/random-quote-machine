@@ -38,8 +38,8 @@
 
 ### This is how the application is displayed on desktop and mobile
 
-![screenshot](https://github.com/roninJosue/freecodecamp/blob/main/front_end_development_libraries/Projects/RandomQuoteMachine/random-quote-machine.jpg?raw=true)
-
+![screenshot](https://github.com/roninJosue/freecodecamp/blob/main/front_end_development_libraries/Projects/RandomQuoteMachine/random-quote-machine-desktop.jpg?raw=true)
+<img src="https://github.com/roninJosue/freecodecamp/blob/main/front_end_development_libraries/Projects/RandomQuoteMachine/random-quote-machine-mobile.jpg?raw=true" width="400px">
 ### Built With
 
 - [React](https://reactjs.org/)
