@@ -16,7 +16,7 @@
       Project
     </a>
     <span> | </span>
-    <a href="https://github.com/roninJosue/freecodecamp/tree/main/front_end_development_libraries/Projects/RandomQuoteMachine">
+    <a href="https://github.com/roninJosue/freecodecamp/tree/main/FrontEndDevelopmentLibraries/Projects/RandomQuoteMachine">
       FreeCodeCamp
     </a>
   </h3>
